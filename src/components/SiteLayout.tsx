@@ -110,13 +110,55 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   );
 }
 
-export function PageHero({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle?: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  subtitle,
+  image,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle?: string;
+  image?: string;
+}) {
   return (
-    <section className="bg-[var(--gradient-hero)] text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-24">
-        <div className="text-xs uppercase tracking-[0.25em] text-white/60">{eyebrow}</div>
-        <h1 className="mt-4 text-4xl md:text-6xl font-semibold tracking-tight max-w-3xl">{title}</h1>
-        {subtitle && <p className="mt-5 text-base md:text-lg text-white/70 max-w-2xl">{subtitle}</p>}
+    <section className="relative overflow-hidden text-white isolate">
+      {image ? (
+        <>
+          <img
+            src={image}
+            alt=""
+            aria-hidden
+            width={1920}
+            height={900}
+            className="absolute inset-0 w-full h-full object-cover -z-10"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-10"
+            style={{ background: "var(--gradient-overlay)" }}
+          />
+        </>
+      ) : (
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10"
+          style={{ background: "var(--gradient-hero)" }}
+        />
+      )}
+      <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 lg:pt-36 lg:pb-40">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-white/85">
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
+          {eyebrow}
+        </div>
+        <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight max-w-3xl text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+          {title}
+        </h1>
+        {subtitle && (
+          <p className="mt-6 text-base md:text-lg text-white/85 max-w-2xl">
+            {subtitle}
+          </p>
+        )}
       </div>
     </section>
   );
