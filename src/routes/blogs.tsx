@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
+import bannerImg from "@/assets/banner-blogs.jpg";
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/blogs")({
@@ -30,7 +31,7 @@ function Blogs() {
         eyebrow="Workshop notes"
         title="Field notes from the workshop floor."
         subtitle="Plain-English writing on aluminium systems, install methods and the trade-offs we work through with clients every week."
-      />
+      image={bannerImg} />
       <section className="max-w-6xl mx-auto px-6 -mt-12 relative z-10 grid md:grid-cols-2 gap-5">
         {posts.map((p, i) => (
           <article key={p.title} className="group bg-card border border-border rounded-xl p-7 shadow-[var(--shadow-card)] hover:-translate-y-1 transition-transform">

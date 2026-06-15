@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
+import bannerImg from "@/assets/banner-projects.jpg";
 import residentialImg from "@/assets/project-residential.jpg";
 import commercialImg from "@/assets/project-commercial.jpg";
 import factoryImg from "@/assets/project-factory.jpg";
@@ -33,7 +34,7 @@ function Projects() {
         eyebrow="Portfolio"
         title="Work we're proud to put our name on."
         subtitle="Every project is photographed after handover. No renders, no stock — just the work."
-      />
+      image={bannerImg} />
       <section className="max-w-7xl mx-auto px-6 -mt-12 relative z-10 grid md:grid-cols-2 gap-6">
         {projects.map((p) => (
           <article key={p.title} className="group bg-card border border-border rounded-xl overflow-hidden shadow-[var(--shadow-card)]">

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
+import bannerImg from "@/assets/banner-contact.jpg";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
@@ -23,7 +24,7 @@ function Contact() {
         eyebrow="Get in touch"
         title="Tell us about your project."
         subtitle="We respond to enquiries within one working day and book site visits within the week."
-      />
+      image={bannerImg} />
       <section className="max-w-7xl mx-auto px-6 -mt-12 relative z-10 grid lg:grid-cols-5 gap-8">
         <form
           onSubmit={(e) => { e.preventDefault(); setSent(true); }}
