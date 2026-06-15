@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Home, Building2, Factory, Check, ArrowRight } from "lucide-react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
+import bannerImg from "@/assets/banner-services.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -42,7 +43,7 @@ function Services() {
         eyebrow="What we do"
         title="Three disciplines. One workshop."
         subtitle="From a single sliding door to a full curtain-walled office tower, every Skyline project is fabricated in-house and installed by our own crews."
-      />
+      image={bannerImg} />
       <section className="max-w-7xl mx-auto px-6 -mt-12 relative z-10 space-y-6">
         {services.map((s, i) => (
           <article key={s.title} id={s.title.toLowerCase().replace(/\s+/g, "-")}

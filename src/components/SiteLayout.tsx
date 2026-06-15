@@ -68,41 +68,63 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
       <main className="flex-1">{children}</main>
 
-      <footer className="mt-24 bg-[var(--gradient-hero)] text-primary-foreground">
-        <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-md bg-white/10 border border-white/20 grid place-items-center">
-                <span className="font-bold">S</span>
+      <footer className="mt-24 relative overflow-hidden text-white" style={{ background: "var(--gradient-hero)" }}>
+        <div aria-hidden className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          style={{ backgroundImage: "linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
+        <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-10">
+          <div className="grid lg:grid-cols-12 gap-12 pb-14 border-b border-white/10">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-2.5">
+                <div className="w-10 h-10 rounded-md bg-[var(--gradient-accent)] grid place-items-center text-[oklch(0.15_0.02_240)]">
+                  <span className="font-bold">S</span>
+                </div>
+                <div>
+                  <div className="font-semibold">Skyline Aluminium</div>
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-white/55">Windows · Doors · Facades</div>
+                </div>
               </div>
-              <span className="font-semibold">Skyline Aluminium</span>
+              <p className="mt-6 text-sm text-white/70 max-w-md leading-relaxed">
+                Engineered windows, doors and facades for homes, offices and industrial facilities. Designed in-house, fabricated in our workshop, installed by our own crews.
+              </p>
+              <form onSubmit={(e) => e.preventDefault()} className="mt-7 flex gap-2 max-w-sm">
+                <input type="email" placeholder="Your email" aria-label="Email"
+                  className="flex-1 rounded-md bg-white/10 border border-white/15 px-4 py-2.5 text-sm placeholder:text-white/45 focus:outline-none focus:border-[var(--accent)]" />
+                <button className="rounded-md bg-[var(--gradient-accent)] text-[oklch(0.15_0.02_240)] px-4 py-2.5 text-sm font-semibold">
+                  Subscribe
+                </button>
+              </form>
             </div>
-            <p className="mt-4 text-sm text-white/70 max-w-md">
-              Engineered windows, doors and facades for homes, offices and industrial facilities. Built in aluminium. Built to last.
-            </p>
+            <div className="lg:col-span-2">
+              <h4 className="text-xs uppercase tracking-[0.2em] text-white/55 mb-5">Explore</h4>
+              <ul className="space-y-3 text-sm text-white/80">
+                <li><Link to="/services" className="hover:text-[var(--accent)] transition">Services</Link></li>
+                <li><Link to="/projects" className="hover:text-[var(--accent)] transition">Projects</Link></li>
+                <li><Link to="/about" className="hover:text-[var(--accent)] transition">About</Link></li>
+                <li><Link to="/blogs" className="hover:text-[var(--accent)] transition">Blog</Link></li>
+                <li><Link to="/faqs" className="hover:text-[var(--accent)] transition">FAQs</Link></li>
+              </ul>
+            </div>
+            <div className="lg:col-span-2">
+              <h4 className="text-xs uppercase tracking-[0.2em] text-white/55 mb-5">Services</h4>
+              <ul className="space-y-3 text-sm text-white/80">
+                <li>Residential Installation</li>
+                <li>Commercial Facades</li>
+                <li>Factory Upgrades</li>
+                <li>Maintenance & Glazing</li>
+              </ul>
+            </div>
+            <div className="lg:col-span-3">
+              <h4 className="text-xs uppercase tracking-[0.2em] text-white/55 mb-5">Studio</h4>
+              <ul className="space-y-3 text-sm text-white/80">
+                <li className="flex items-start gap-2.5"><MapPin size={15} className="mt-0.5 text-[var(--accent)] shrink-0"/>14 Industrial Way,<br/>Skyline Park, 4001</li>
+                <li className="flex items-center gap-2.5"><Phone size={15} className="text-[var(--accent)]"/>+1 (555) 010-2200</li>
+                <li className="flex items-center gap-2.5"><Mail size={15} className="text-[var(--accent)]"/>hello@skylinealuminium.com</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h4 className="text-sm font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li><Link to="/about" className="hover:text-white">About</Link></li>
-              <li><Link to="/projects" className="hover:text-white">Projects</Link></li>
-              <li><Link to="/blogs" className="hover:text-white">Blog</Link></li>
-              <li><Link to="/faqs" className="hover:text-white">FAQs</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li className="flex items-start gap-2"><MapPin size={14} className="mt-0.5"/>14 Industrial Way, Skyline Park</li>
-              <li className="flex items-center gap-2"><Phone size={14}/>+1 (555) 010-2200</li>
-              <li className="flex items-center gap-2"><Mail size={14}/>hello@skylinealuminium.com</li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/60">
+          <div className="pt-8 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/55">
             <span>© {new Date().getFullYear()} Skyline Aluminium Windows & Doors. All rights reserved.</span>
-            <span>Crafted with precision · ISO 9001 Certified</span>
+            <span>Crafted with precision · ISO 9001 Certified · BIM Level 2</span>
           </div>
         </div>
       </footer>
@@ -110,13 +132,55 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   );
 }
 
-export function PageHero({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle?: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  subtitle,
+  image,
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle?: string;
+  image?: string;
+}) {
   return (
-    <section className="bg-[var(--gradient-hero)] text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-24">
-        <div className="text-xs uppercase tracking-[0.25em] text-white/60">{eyebrow}</div>
-        <h1 className="mt-4 text-4xl md:text-6xl font-semibold tracking-tight max-w-3xl">{title}</h1>
-        {subtitle && <p className="mt-5 text-base md:text-lg text-white/70 max-w-2xl">{subtitle}</p>}
+    <section className="relative overflow-hidden text-white isolate">
+      {image ? (
+        <>
+          <img
+            src={image}
+            alt=""
+            aria-hidden
+            width={1920}
+            height={900}
+            className="absolute inset-0 w-full h-full object-cover -z-10"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-10"
+            style={{ background: "var(--gradient-overlay)" }}
+          />
+        </>
+      ) : (
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10"
+          style={{ background: "var(--gradient-hero)" }}
+        />
+      )}
+      <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 lg:pt-36 lg:pb-40">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-white/85">
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
+          {eyebrow}
+        </div>
+        <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight max-w-3xl text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+          {title}
+        </h1>
+        {subtitle && (
+          <p className="mt-6 text-base md:text-lg text-white/85 max-w-2xl">
+            {subtitle}
+          </p>
+        )}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
+import bannerImg from "@/assets/banner-faqs.jpg";
 import { Plus, Minus } from "lucide-react";
 
 export const Route = createFileRoute("/faqs")({
@@ -34,7 +35,7 @@ function Faqs() {
         eyebrow="Frequently asked"
         title="The questions we hear most."
         subtitle="Can't find what you're looking for? Send a quick note via our contact page and we'll come back within one working day."
-      />
+      image={bannerImg} />
       <section className="max-w-3xl mx-auto px-6 -mt-12 relative z-10 space-y-3">
         {faqs.map((f, i) => {
           const isOpen = open === i;

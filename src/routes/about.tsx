@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
+import bannerImg from "@/assets/banner-about.jpg";
 import { Award, Users, Hammer, Globe2 } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -28,7 +29,7 @@ function About() {
         eyebrow="About Skyline"
         title="An aluminium workshop, run by builders."
         subtitle="We started in a single unit in 2007. Today we run a 3,400 m² workshop, three regional offices and crews that have worked together for over a decade."
-      />
+      image={bannerImg} />
       <section className="max-w-5xl mx-auto px-6 -mt-12 relative z-10">
         <div className="bg-card border border-border rounded-2xl p-10 lg:p-14 shadow-[var(--shadow-card)] space-y-8 text-muted-foreground leading-relaxed">
           <p className="text-xl text-foreground">
