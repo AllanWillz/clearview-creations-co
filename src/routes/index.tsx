@@ -86,25 +86,26 @@ function Home_() {
       </section>
 
       {/* Services cards — floating over hero */}
-      <section className="max-w-7xl mx-auto px-6 -mt-20 relative z-10">
-        <div className="grid md:grid-cols-3 gap-5">
+      <section className="max-w-7xl mx-auto px-6 -mt-24 relative z-10">
+        <div className="grid md:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <div
               key={s.title}
-              className="group relative bg-card border border-border rounded-2xl p-8 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+              className="group relative bg-card border border-border rounded-3xl p-10 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-2 transition-all duration-300 overflow-hidden"
             >
-              <div aria-hidden className="absolute -top-16 -right-16 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-2xl"
+              <div aria-hidden className="absolute -top-20 -right-20 w-48 h-48 rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-2xl"
                 style={{ background: "var(--gradient-accent)" }} />
+              <div aria-hidden className="absolute top-0 left-0 right-0 h-1 bg-[var(--gradient-hero)]" />
               <div className="relative">
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-xl bg-secondary grid place-items-center text-primary group-hover:bg-[var(--gradient-accent)] group-hover:text-[oklch(0.15_0.02_240)] transition-all duration-300">
-                    <s.icon size={26} />
+                  <div className="w-16 h-16 rounded-2xl bg-secondary grid place-items-center text-primary group-hover:bg-[var(--gradient-accent)] group-hover:text-[oklch(0.15_0.02_240)] transition-all duration-300">
+                    <s.icon size={30} />
                   </div>
-                  <span className="text-xs font-mono text-muted-foreground">0{i + 1}</span>
+                  <span className="text-sm font-mono text-muted-foreground">0{i + 1}</span>
                 </div>
-                <h3 className="mt-6 font-semibold text-xl text-foreground tracking-tight">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <Link to="/services" className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:text-[oklch(0.45_0.15_55)] transition">
+                <h3 className="mt-8 font-bold text-2xl text-foreground tracking-tight">{s.title}</h3>
+                <p className="mt-3 text-[15px] text-muted-foreground leading-relaxed">{s.desc}</p>
+                <Link to="/services" className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
                   Learn more <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
