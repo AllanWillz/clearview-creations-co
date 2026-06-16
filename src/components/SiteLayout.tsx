@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { Menu, X, Mail, Phone, MapPin } from "lucide-react";
+import skyscraperImg from "@/assets/skyscraper.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
