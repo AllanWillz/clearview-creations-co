@@ -35,26 +35,30 @@ function Projects() {
         title="Work we're proud to put our name on."
         subtitle="Every project is photographed after handover. No renders, no stock — just the work."
       image={bannerImg} />
-      <section className="max-w-7xl mx-auto px-6 -mt-12 relative z-10 grid md:grid-cols-2 gap-6">
+      <section className="max-w-7xl mx-auto px-6 -mt-16 relative z-10 grid md:grid-cols-2 gap-8">
         {projects.map((p) => (
-          <article key={p.title} className="group bg-card border border-border rounded-xl overflow-hidden shadow-[var(--shadow-card)]">
-            <div className="overflow-hidden">
-              <img src={p.img} alt={p.title} loading="lazy" width={900} height={700}
-                className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"/>
+          <article key={p.title} className="group bg-card border border-border rounded-3xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-2 transition-all duration-300">
+            <div className="overflow-hidden relative">
+              <img src={p.img} alt={p.title} loading="lazy" width={1100} height={800}
+                className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <span className="absolute top-5 left-5 text-[11px] uppercase tracking-[0.2em] text-white bg-primary/85 backdrop-blur border border-white/20 px-3 py-1.5 rounded-full font-semibold">{p.category}</span>
             </div>
-            <div className="p-6">
-              <div className="flex items-center justify-between text-xs uppercase tracking-wider text-muted-foreground">
-                <span>{p.category}</span>
+            <div className="p-8 lg:p-10">
+              <div className="flex items-center justify-between text-xs uppercase tracking-wider text-muted-foreground font-medium">
+                <span className="text-primary">{p.category}</span>
                 <span>{p.location}</span>
               </div>
-              <h3 className="mt-3 text-xl font-semibold text-foreground">{p.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
+              <h3 className="mt-4 text-2xl lg:text-3xl font-bold tracking-tight text-foreground">{p.title}</h3>
+              <p className="mt-3 text-[15px] text-muted-foreground leading-relaxed">{p.desc}</p>
+              <Link to="/contact" className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-3 transition-all">
+                Discuss a similar project →
+              </Link>
             </div>
           </article>
         ))}
       </section>
       <div className="max-w-7xl mx-auto px-6 mt-20 text-center">
-        <Link to="/contact" className="inline-flex rounded-md bg-primary text-primary-foreground px-6 py-3 text-sm font-medium">
+        <Link to="/contact" className="inline-flex rounded-lg bg-primary text-primary-foreground px-8 py-4 text-sm font-semibold shadow-[var(--shadow-elegant)] hover:opacity-90 transition">
           Start your project
         </Link>
       </div>
