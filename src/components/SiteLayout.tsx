@@ -6,6 +6,7 @@ const navLinks = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
   { to: "/projects", label: "Projects" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/about", label: "About" },
   { to: "/blogs", label: "Blog" },
   { to: "/faqs", label: "FAQs" },
@@ -16,24 +17,24 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 h-18 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-md bg-[var(--gradient-hero)] grid place-items-center shadow-[var(--shadow-card)]">
-              <span className="text-primary-foreground font-bold text-lg">S</span>
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/90 border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between" style={{ minHeight: "5.25rem" }}>
+          <Link to="/" className="flex items-center gap-3">
+            <div className="w-11 h-11 rounded-lg bg-[var(--gradient-hero)] grid place-items-center shadow-[var(--shadow-card)]">
+              <span className="text-primary-foreground font-bold text-xl">S</span>
             </div>
             <div className="leading-tight">
-              <div className="font-semibold tracking-tight text-foreground">Skyline</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Aluminium · Windows & Doors</div>
+              <div className="font-bold tracking-tight text-foreground text-lg">Skyline</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">Aluminium · Windows & Doors</div>
             </div>
           </Link>
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                activeProps={{ className: "text-foreground" }}
+                className="text-[15px] font-medium text-muted-foreground hover:text-primary transition-colors py-2"
+                activeProps={{ className: "text-primary font-semibold" }}
                 activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
@@ -42,23 +43,23 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </nav>
           <Link
             to="/contact"
-            className="hidden lg:inline-flex items-center rounded-md bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90 transition shadow-[var(--shadow-card)]"
+            className="hidden lg:inline-flex items-center rounded-lg bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:opacity-90 transition shadow-[var(--shadow-card)]"
           >
             Get a Quote
           </Link>
           <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
-            {open ? <X size={22} /> : <Menu size={22} />}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
         {open && (
           <div className="lg:hidden border-t border-border bg-background">
             <div className="px-6 py-4 flex flex-col gap-3">
               {navLinks.map((l) => (
-                <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-sm py-1 text-muted-foreground">
+                <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-base py-1.5 text-foreground font-medium">
                   {l.label}
                 </Link>
               ))}
-              <Link to="/contact" onClick={() => setOpen(false)} className="mt-2 inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-4 py-2 text-sm font-medium">
+              <Link to="/contact" onClick={() => setOpen(false)} className="mt-2 inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-4 py-3 text-sm font-semibold">
                 Get a Quote
               </Link>
             </div>
@@ -96,9 +97,10 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             </div>
             <div className="lg:col-span-2">
               <h4 className="text-xs uppercase tracking-[0.2em] text-white/55 mb-5">Explore</h4>
-              <ul className="space-y-3 text-sm text-white/80">
+              <ul className="space-y-3 text-sm text-white/85">
                 <li><Link to="/services" className="hover:text-[var(--accent)] transition">Services</Link></li>
                 <li><Link to="/projects" className="hover:text-[var(--accent)] transition">Projects</Link></li>
+                <li><Link to="/gallery" className="hover:text-[var(--accent)] transition">Gallery</Link></li>
                 <li><Link to="/about" className="hover:text-[var(--accent)] transition">About</Link></li>
                 <li><Link to="/blogs" className="hover:text-[var(--accent)] transition">Blog</Link></li>
                 <li><Link to="/faqs" className="hover:text-[var(--accent)] transition">FAQs</Link></li>
@@ -158,7 +160,7 @@ export function PageHero({
           <div
             aria-hidden
             className="absolute inset-0 -z-10"
-            style={{ background: "var(--gradient-overlay)" }}
+            style={{ background: "linear-gradient(180deg, oklch(0.22 0.10 268 / 0.25) 0%, oklch(0.30 0.14 268 / 0.55) 70%, oklch(0.30 0.14 268 / 0.75) 100%)" }}
           />
         </>
       ) : (
@@ -168,16 +170,16 @@ export function PageHero({
           style={{ background: "var(--gradient-hero)" }}
         />
       )}
-      <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 lg:pt-36 lg:pb-40">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-white/85">
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-36 lg:pt-40 lg:pb-44">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 backdrop-blur px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-white font-medium">
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
           {eyebrow}
         </div>
-        <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight max-w-3xl text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+        <h1 className="mt-7 text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight max-w-4xl text-white leading-[1.02] drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-6 text-base md:text-lg text-white/85 max-w-2xl">
+          <p className="mt-7 text-lg md:text-2xl text-white max-w-2xl leading-relaxed font-light drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
             {subtitle}
           </p>
         )}

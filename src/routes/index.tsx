@@ -50,7 +50,7 @@ function Home_() {
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />
         <div aria-hidden className="absolute inset-0 -z-10"
-          style={{ background: "linear-gradient(180deg, oklch(0.12 0.03 245 / 0.35) 0%, oklch(0.10 0.03 245 / 0.55) 50%, oklch(0.08 0.02 245 / 0.92) 100%)" }} />
+          style={{ background: "linear-gradient(180deg, oklch(0.20 0.10 268 / 0.20) 0%, oklch(0.20 0.10 268 / 0.45) 55%, oklch(0.18 0.10 268 / 0.78) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-6 pt-40 pb-20 lg:pb-28 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-white/85">
@@ -86,25 +86,26 @@ function Home_() {
       </section>
 
       {/* Services cards — floating over hero */}
-      <section className="max-w-7xl mx-auto px-6 -mt-20 relative z-10">
-        <div className="grid md:grid-cols-3 gap-5">
+      <section className="max-w-7xl mx-auto px-6 -mt-24 relative z-10">
+        <div className="grid md:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <div
               key={s.title}
-              className="group relative bg-card border border-border rounded-2xl p-8 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+              className="group relative bg-card border border-border rounded-3xl p-10 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-2 transition-all duration-300 overflow-hidden"
             >
-              <div aria-hidden className="absolute -top-16 -right-16 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-2xl"
+              <div aria-hidden className="absolute -top-20 -right-20 w-48 h-48 rounded-full opacity-0 group-hover:opacity-100 transition-opacity blur-2xl"
                 style={{ background: "var(--gradient-accent)" }} />
+              <div aria-hidden className="absolute top-0 left-0 right-0 h-1 bg-[var(--gradient-hero)]" />
               <div className="relative">
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-xl bg-secondary grid place-items-center text-primary group-hover:bg-[var(--gradient-accent)] group-hover:text-[oklch(0.15_0.02_240)] transition-all duration-300">
-                    <s.icon size={26} />
+                  <div className="w-16 h-16 rounded-2xl bg-secondary grid place-items-center text-primary group-hover:bg-[var(--gradient-accent)] group-hover:text-[oklch(0.15_0.02_240)] transition-all duration-300">
+                    <s.icon size={30} />
                   </div>
-                  <span className="text-xs font-mono text-muted-foreground">0{i + 1}</span>
+                  <span className="text-sm font-mono text-muted-foreground">0{i + 1}</span>
                 </div>
-                <h3 className="mt-6 font-semibold text-xl text-foreground tracking-tight">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <Link to="/services" className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary group-hover:text-[oklch(0.45_0.15_55)] transition">
+                <h3 className="mt-8 font-bold text-2xl text-foreground tracking-tight">{s.title}</h3>
+                <p className="mt-3 text-[15px] text-muted-foreground leading-relaxed">{s.desc}</p>
+                <Link to="/services" className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
                   Learn more <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -153,14 +154,14 @@ function Home_() {
           <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-foreground">Built right. The first time.</h2>
           <p className="mt-4 text-muted-foreground">Every system we install is fabricated, finished and fitted by Skyline-trained crews.</p>
         </div>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((r) => (
-            <div key={r.title} className="bg-card border border-border rounded-2xl p-7 hover:border-[var(--accent)] hover:shadow-[var(--shadow-card)] transition-all">
-              <div className="w-12 h-12 rounded-xl grid place-items-center" style={{ background: "var(--gradient-accent)" }}>
-                <r.icon size={20} className="text-[oklch(0.15_0.02_240)]" />
+            <div key={r.title} className="bg-card border border-border rounded-2xl p-8 hover:border-primary hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1 transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl grid place-items-center shadow-[var(--shadow-card)]" style={{ background: "var(--gradient-accent)" }}>
+                <r.icon size={24} className="text-[oklch(0.15_0.02_240)]" />
               </div>
-              <h3 className="mt-5 font-semibold text-foreground">{r.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
+              <h3 className="mt-6 font-bold text-lg text-foreground">{r.title}</h3>
+              <p className="mt-3 text-[15px] text-muted-foreground leading-relaxed">{r.desc}</p>
             </div>
           ))}
         </div>
