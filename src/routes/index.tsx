@@ -50,7 +50,7 @@ function Home_() {
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />
         <div aria-hidden className="absolute inset-0 -z-10"
-          style={{ background: "linear-gradient(180deg, oklch(0.12 0.03 245 / 0.35) 0%, oklch(0.10 0.03 245 / 0.55) 50%, oklch(0.08 0.02 245 / 0.92) 100%)" }} />
+          style={{ background: "linear-gradient(180deg, oklch(0.20 0.10 268 / 0.20) 0%, oklch(0.20 0.10 268 / 0.45) 55%, oklch(0.18 0.10 268 / 0.78) 100%)" }} />
         <div className="relative max-w-7xl mx-auto px-6 pt-40 pb-20 lg:pb-28 w-full">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-white/85">
