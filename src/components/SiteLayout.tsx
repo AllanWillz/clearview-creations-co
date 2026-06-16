@@ -160,7 +160,7 @@ export function PageHero({
           <div
             aria-hidden
             className="absolute inset-0 -z-10"
-            style={{ background: "var(--gradient-overlay)" }}
+            style={{ background: "linear-gradient(180deg, oklch(0.22 0.10 268 / 0.25) 0%, oklch(0.30 0.14 268 / 0.55) 70%, oklch(0.30 0.14 268 / 0.75) 100%)" }}
           />
         </>
       ) : (
@@ -170,16 +170,16 @@ export function PageHero({
           style={{ background: "var(--gradient-hero)" }}
         />
       )}
-      <div className="max-w-7xl mx-auto px-6 pt-28 pb-32 lg:pt-36 lg:pb-40">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-white/85">
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-36 lg:pt-40 lg:pb-44">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 backdrop-blur px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-white font-medium">
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
           {eyebrow}
         </div>
-        <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight max-w-3xl text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+        <h1 className="mt-7 text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight max-w-4xl text-white leading-[1.02] drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-6 text-base md:text-lg text-white/85 max-w-2xl">
+          <p className="mt-7 text-lg md:text-2xl text-white max-w-2xl leading-relaxed font-light drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
             {subtitle}
           </p>
         )}
