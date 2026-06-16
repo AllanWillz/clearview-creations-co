@@ -195,18 +195,45 @@ function Home_() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="max-w-7xl mx-auto px-6 pt-32">
+        <div className="text-center max-w-2xl mx-auto">
+          <div className="text-xs uppercase tracking-[0.25em] text-[oklch(0.55_0.15_55)] font-semibold">Client voices</div>
+          <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-foreground">Trusted by architects & developers.</h2>
+        </div>
+        <div className="mt-14 grid md:grid-cols-3 gap-6">
+          {[
+            { q: "Skyline delivered our 14-storey curtain wall ahead of schedule. Detailing was flawless.", n: "Amelia Carter", r: "Project Architect, Meridian Studio" },
+            { q: "Our family home feels brand new. The sliding doors open the whole rear elevation to the garden.", n: "James & Priya Okafor", r: "Homeowners, Hilltop" },
+            { q: "They re-clad three production halls without a single day of downtime. Outstanding crew.", n: "Daniel Reyes", r: "Facilities Director, Northgate" },
+          ].map((t) => (
+            <figure key={t.n} className="bg-card border border-border rounded-2xl p-8 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition">
+              <div className="text-5xl leading-none text-primary/30 font-serif">"</div>
+              <blockquote className="mt-2 text-[15px] text-foreground leading-relaxed">{t.q}</blockquote>
+              <figcaption className="mt-6 pt-5 border-t border-border">
+                <div className="font-semibold text-foreground text-sm">{t.n}</div>
+                <div className="text-xs text-muted-foreground mt-0.5">{t.r}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 mt-32">
-        <div className="relative overflow-hidden rounded-3xl p-12 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 shadow-[var(--shadow-elegant)] text-white"
+        <div className="relative overflow-hidden rounded-3xl p-16 lg:p-24 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 shadow-[var(--shadow-elegant)] text-white"
           style={{ background: "var(--gradient-hero)" }}>
-          <div aria-hidden className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-30 blur-3xl"
+          <div aria-hidden className="absolute -top-24 -right-24 w-[32rem] h-[32rem] rounded-full opacity-30 blur-3xl"
             style={{ background: "var(--gradient-accent)" }} />
-          <div className="relative">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">Planning a build or refit?</h2>
-            <p className="mt-3 text-white/80 max-w-xl">Get a site visit and a detailed quote within 5 working days.</p>
+          <div aria-hidden className="absolute -bottom-32 -left-20 w-96 h-96 rounded-full opacity-20 blur-3xl"
+            style={{ background: "var(--gradient-accent)" }} />
+          <div className="relative max-w-2xl">
+            <div className="text-xs uppercase tracking-[0.25em] text-white/70 font-semibold">Start your project</div>
+            <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.05]">Planning a build or refit?</h2>
+            <p className="mt-6 text-lg text-white/85 max-w-xl leading-relaxed">Get a site visit, detailed measurements and an engineered quote within 5 working days — no obligation.</p>
           </div>
-          <Link to="/contact" className="relative inline-flex items-center gap-2 rounded-md bg-[var(--gradient-accent)] text-[oklch(0.15_0.02_240)] px-7 py-4 text-sm font-semibold shadow-lg hover:scale-[1.02] transition">
-            Request a Quote <ArrowRight size={16} />
+          <Link to="/contact" className="relative inline-flex items-center gap-2 rounded-md bg-[var(--gradient-accent)] text-[oklch(0.15_0.02_240)] px-9 py-5 text-base font-semibold shadow-lg hover:scale-[1.02] transition shrink-0">
+            Request a Quote <ArrowRight size={18} />
           </Link>
         </div>
       </section>

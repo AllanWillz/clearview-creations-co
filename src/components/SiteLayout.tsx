@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { Menu, X, Mail, Phone, MapPin } from "lucide-react";
+import skyscraperImg from "@/assets/skyscraper.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -69,7 +70,17 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
       <main className="flex-1">{children}</main>
 
-      <footer className="mt-24 relative overflow-hidden text-white" style={{ background: "var(--gradient-hero)" }}>
+      <div aria-hidden className="relative mt-24 h-56 md:h-72 lg:h-96 pointer-events-none overflow-hidden">
+        <img
+          src={skyscraperImg}
+          alt=""
+          loading="lazy"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[120%] w-auto object-contain object-bottom opacity-90 drop-shadow-[0_20px_40px_rgba(15,23,60,0.25)]"
+        />
+        <div className="absolute inset-x-0 bottom-0 h-12" style={{ background: "linear-gradient(180deg, transparent, oklch(0.22 0.07 258))" }} />
+      </div>
+
+      <footer className="relative overflow-hidden text-white" style={{ background: "linear-gradient(180deg, oklch(0.22 0.07 258) 0%, oklch(0.18 0.08 260) 100%)" }}>
         <div aria-hidden className="absolute inset-0 opacity-[0.07] pointer-events-none"
           style={{ backgroundImage: "linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
         <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-10">
