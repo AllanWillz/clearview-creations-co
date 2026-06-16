@@ -154,14 +154,14 @@ function Home_() {
           <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-foreground">Built right. The first time.</h2>
           <p className="mt-4 text-muted-foreground">Every system we install is fabricated, finished and fitted by Skyline-trained crews.</p>
         </div>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((r) => (
-            <div key={r.title} className="bg-card border border-border rounded-2xl p-7 hover:border-[var(--accent)] hover:shadow-[var(--shadow-card)] transition-all">
-              <div className="w-12 h-12 rounded-xl grid place-items-center" style={{ background: "var(--gradient-accent)" }}>
-                <r.icon size={20} className="text-[oklch(0.15_0.02_240)]" />
+            <div key={r.title} className="bg-card border border-border rounded-2xl p-8 hover:border-primary hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1 transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl grid place-items-center shadow-[var(--shadow-card)]" style={{ background: "var(--gradient-accent)" }}>
+                <r.icon size={24} className="text-[oklch(0.15_0.02_240)]" />
               </div>
-              <h3 className="mt-5 font-semibold text-foreground">{r.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
+              <h3 className="mt-6 font-bold text-lg text-foreground">{r.title}</h3>
+              <p className="mt-3 text-[15px] text-muted-foreground leading-relaxed">{r.desc}</p>
             </div>
           ))}
         </div>
