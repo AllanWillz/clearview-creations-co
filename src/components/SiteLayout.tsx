@@ -6,6 +6,7 @@ const navLinks = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
   { to: "/projects", label: "Projects" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/about", label: "About" },
   { to: "/blogs", label: "Blog" },
   { to: "/faqs", label: "FAQs" },
@@ -16,24 +17,24 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 h-18 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-md bg-[var(--gradient-hero)] grid place-items-center shadow-[var(--shadow-card)]">
-              <span className="text-primary-foreground font-bold text-lg">S</span>
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/90 border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between" style={{ minHeight: "5.25rem" }}>
+          <Link to="/" className="flex items-center gap-3">
+            <div className="w-11 h-11 rounded-lg bg-[var(--gradient-hero)] grid place-items-center shadow-[var(--shadow-card)]">
+              <span className="text-primary-foreground font-bold text-xl">S</span>
             </div>
             <div className="leading-tight">
-              <div className="font-semibold tracking-tight text-foreground">Skyline</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Aluminium · Windows & Doors</div>
+              <div className="font-bold tracking-tight text-foreground text-lg">Skyline</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">Aluminium · Windows & Doors</div>
             </div>
           </Link>
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                activeProps={{ className: "text-foreground" }}
+                className="text-[15px] font-medium text-muted-foreground hover:text-primary transition-colors py-2"
+                activeProps={{ className: "text-primary font-semibold" }}
                 activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
@@ -42,23 +43,23 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </nav>
           <Link
             to="/contact"
-            className="hidden lg:inline-flex items-center rounded-md bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90 transition shadow-[var(--shadow-card)]"
+            className="hidden lg:inline-flex items-center rounded-lg bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:opacity-90 transition shadow-[var(--shadow-card)]"
           >
             Get a Quote
           </Link>
           <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
-            {open ? <X size={22} /> : <Menu size={22} />}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
         {open && (
           <div className="lg:hidden border-t border-border bg-background">
             <div className="px-6 py-4 flex flex-col gap-3">
               {navLinks.map((l) => (
-                <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-sm py-1 text-muted-foreground">
+                <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-base py-1.5 text-foreground font-medium">
                   {l.label}
                 </Link>
               ))}
-              <Link to="/contact" onClick={() => setOpen(false)} className="mt-2 inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-4 py-2 text-sm font-medium">
+              <Link to="/contact" onClick={() => setOpen(false)} className="mt-2 inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-4 py-3 text-sm font-semibold">
                 Get a Quote
               </Link>
             </div>
