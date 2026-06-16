@@ -97,9 +97,10 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             </div>
             <div className="lg:col-span-2">
               <h4 className="text-xs uppercase tracking-[0.2em] text-white/55 mb-5">Explore</h4>
-              <ul className="space-y-3 text-sm text-white/80">
+              <ul className="space-y-3 text-sm text-white/85">
                 <li><Link to="/services" className="hover:text-[var(--accent)] transition">Services</Link></li>
                 <li><Link to="/projects" className="hover:text-[var(--accent)] transition">Projects</Link></li>
+                <li><Link to="/gallery" className="hover:text-[var(--accent)] transition">Gallery</Link></li>
                 <li><Link to="/about" className="hover:text-[var(--accent)] transition">About</Link></li>
                 <li><Link to="/blogs" className="hover:text-[var(--accent)] transition">Blog</Link></li>
                 <li><Link to="/faqs" className="hover:text-[var(--accent)] transition">FAQs</Link></li>
