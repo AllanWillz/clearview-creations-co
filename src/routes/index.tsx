@@ -5,6 +5,7 @@ import heroImg from "@/assets/hero.jpg";
 import residentialImg from "@/assets/project-residential.jpg";
 import commercialImg from "@/assets/project-commercial.jpg";
 import factoryImg from "@/assets/project-factory.jpg";
+import processBg from "@/assets/process-bg.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -168,30 +169,37 @@ function Home_() {
       </section>
 
       {/* Process strip */}
-      <section className="max-w-7xl mx-auto px-6 pt-32">
-        <div className="grid lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-4">
-            <div className="text-xs uppercase tracking-[0.25em] text-[oklch(0.55_0.15_55)] font-semibold">How we work</div>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-foreground">From site visit to handover.</h2>
-            <p className="mt-4 text-muted-foreground">A transparent four-step process with milestone reporting at every stage.</p>
+      <section className="relative mt-32 py-24 lg:py-28 overflow-hidden">
+        <div aria-hidden className="absolute inset-0 -z-10">
+          <img src={processBg} alt="" loading="lazy" width={1920} height={1024}
+            className="w-full h-full object-cover opacity-[0.18]" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, var(--background) 0%, transparent 20%, transparent 80%, var(--background) 100%)" }} />
+        </div>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-4">
+              <div className="text-xs uppercase tracking-[0.25em] text-[oklch(0.55_0.15_55)] font-semibold">How we work</div>
+              <h2 className="mt-3 text-4xl lg:text-5xl font-semibold tracking-tight text-foreground">From site visit to handover.</h2>
+              <p className="mt-4 text-muted-foreground">A transparent four-step process with milestone reporting at every stage.</p>
+            </div>
+            <ol className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
+              {[
+                { n: "01", t: "Survey & Brief", d: "On-site measurement, condition report and design brief." },
+                { n: "02", t: "Design & Engineer", d: "BIM-coordinated drawings, glass specs and finish samples." },
+                { n: "03", t: "Fabricate", d: "Cut, weld and finish in our 3,400 m² workshop." },
+                { n: "04", t: "Install & Handover", d: "Phased install with weekly progress reports." },
+              ].map((p) => (
+                <li key={p.n} className="bg-card/95 backdrop-blur border border-border rounded-2xl p-8 lg:p-10 relative overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1 transition-all">
+                  <span className="absolute -top-4 -right-2 text-8xl font-bold text-[oklch(0.55_0.15_55)]/15">{p.n}</span>
+                  <div className="relative">
+                    <span className="text-xs font-mono text-[oklch(0.55_0.15_55)] font-semibold">{p.n}</span>
+                    <h3 className="mt-3 font-semibold text-foreground text-xl">{p.t}</h3>
+                    <p className="mt-2 text-[15px] text-muted-foreground leading-relaxed">{p.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
-          <ol className="lg:col-span-8 grid sm:grid-cols-2 gap-5">
-            {[
-              { n: "01", t: "Survey & Brief", d: "On-site measurement, condition report and design brief." },
-              { n: "02", t: "Design & Engineer", d: "BIM-coordinated drawings, glass specs and finish samples." },
-              { n: "03", t: "Fabricate", d: "Cut, weld and finish in our 3,400 m² workshop." },
-              { n: "04", t: "Install & Handover", d: "Phased install with weekly progress reports." },
-            ].map((p) => (
-              <li key={p.n} className="bg-card border border-border rounded-2xl p-6 relative overflow-hidden">
-                <span className="absolute -top-2 -right-2 text-7xl font-bold text-[oklch(0.55_0.15_55)]/10">{p.n}</span>
-                <div className="relative">
-                  <span className="text-xs font-mono text-[oklch(0.55_0.15_55)]">{p.n}</span>
-                  <h3 className="mt-2 font-semibold text-foreground">{p.t}</h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground">{p.d}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 

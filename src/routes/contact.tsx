@@ -39,8 +39,8 @@ function Contact() {
             <Field label="Phone" name="phone" type="tel" />
           </div>
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground">Project type</label>
-            <select className="mt-2 w-full bg-background border border-input rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+            <label className="text-xs uppercase tracking-wider text-foreground/70 font-semibold">Project type</label>
+            <select className="mt-2 w-full bg-background border border-input rounded-md px-3 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring">
               <option>Residential installation</option>
               <option>Commercial facade</option>
               <option>Factory upgrade</option>
@@ -48,8 +48,8 @@ function Contact() {
             </select>
           </div>
           <div>
-            <label className="text-xs uppercase tracking-wider text-muted-foreground">How can we help?</label>
-            <textarea rows={5} className="mt-2 w-full bg-background border border-input rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Tell us about scope, timing, and any drawings you have…"/>
+            <label className="text-xs uppercase tracking-wider text-foreground/70 font-semibold">How can we help?</label>
+            <textarea rows={5} className="mt-2 w-full bg-background border border-input rounded-md px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Tell us about scope, timing, and any drawings you have…"/>
           </div>
           <button type="submit" className="w-full sm:w-auto inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover:opacity-90">
             {sent ? "Thanks — we'll be in touch" : "Send enquiry"}
@@ -77,9 +77,9 @@ function Contact() {
 function Field({ label, name, type = "text", required = true }: { label: string; name: string; type?: string; required?: boolean }) {
   return (
     <div>
-      <label htmlFor={name} className="text-xs uppercase tracking-wider text-muted-foreground">{label}</label>
+      <label htmlFor={name} className="text-xs uppercase tracking-wider text-foreground/70 font-semibold">{label}</label>
       <input id={name} name={name} type={type} required={required}
-        className="mt-2 w-full bg-background border border-input rounded-md px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring"/>
+        className="mt-2 w-full bg-background border border-input rounded-md px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"/>
     </div>
   );
 }
