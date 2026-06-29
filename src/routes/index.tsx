@@ -5,6 +5,7 @@ import heroImg from "@/assets/hero.jpg";
 import residentialImg from "@/assets/project-residential.jpg";
 import commercialImg from "@/assets/project-commercial.jpg";
 import factoryImg from "@/assets/project-factory.jpg";
+import processBg from "@/assets/process-bg.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
