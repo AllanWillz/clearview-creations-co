@@ -172,15 +172,17 @@ function Home_() {
       <section className="relative mt-32 py-24 lg:py-28 overflow-hidden">
         <div aria-hidden className="absolute inset-0 -z-10">
           <img src={processBg} alt="" loading="lazy" width={1920} height={1024}
-            className="w-full h-full object-cover opacity-[0.18]" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, var(--background) 0%, transparent 20%, transparent 80%, var(--background) 100%)" }} />
+            className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(100deg, oklch(0.22 0.07 258 / 0.88) 0%, oklch(0.22 0.07 258 / 0.55) 55%, oklch(0.22 0.07 258 / 0.25) 100%)" }} />
+          <div className="absolute inset-x-0 top-0 h-24" style={{ background: "linear-gradient(180deg, var(--background), transparent)" }} />
+          <div className="absolute inset-x-0 bottom-0 h-24" style={{ background: "linear-gradient(0deg, var(--background), transparent)" }} />
         </div>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4">
-              <div className="text-xs uppercase tracking-[0.25em] text-[oklch(0.55_0.15_55)] font-semibold">How we work</div>
-              <h2 className="mt-3 text-4xl lg:text-5xl font-semibold tracking-tight text-foreground">From site visit to handover.</h2>
-              <p className="mt-4 text-muted-foreground">A transparent four-step process with milestone reporting at every stage.</p>
+              <div className="text-xs uppercase tracking-[0.25em] text-[oklch(0.78_0.14_60)] font-semibold">How we work</div>
+              <h2 className="mt-3 text-4xl lg:text-5xl font-semibold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">From site visit to handover.</h2>
+              <p className="mt-4 text-white/85 text-lg">A transparent four-step process with milestone reporting at every stage.</p>
             </div>
             <ol className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
               {[
