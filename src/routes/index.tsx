@@ -169,12 +169,10 @@ function Home_() {
       </section>
 
       {/* Process strip */}
-      <section className="relative isolate mt-32 py-24 lg:py-28 overflow-hidden">
+      <section className="relative isolate mt-32 py-28 lg:py-36 overflow-hidden">
         <img src={processBg} alt="" loading="lazy" width={1920} height={1024}
           className="absolute inset-0 w-full h-full object-cover z-0" />
-        <div aria-hidden className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(100deg, oklch(0.20 0.09 260 / 0.92) 0%, oklch(0.22 0.08 260 / 0.70) 55%, oklch(0.22 0.08 260 / 0.45) 100%)" }} />
-        <div aria-hidden className="absolute inset-x-0 top-0 h-24 z-[1]" style={{ background: "linear-gradient(180deg, var(--background), transparent)" }} />
-        <div aria-hidden className="absolute inset-x-0 bottom-0 h-24 z-[1]" style={{ background: "linear-gradient(0deg, var(--background), transparent)" }} />
+        <div aria-hidden className="absolute inset-0 z-[1]" style={{ background: "oklch(0.22 0.09 260 / 0.55)" }} />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4">
@@ -230,17 +228,13 @@ function Home_() {
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 mt-32">
         <div className="relative overflow-hidden rounded-3xl p-16 lg:p-24 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 shadow-[var(--shadow-elegant)] text-white"
-          style={{ background: "var(--gradient-hero)" }}>
-          <div aria-hidden className="absolute -top-24 -right-24 w-[32rem] h-[32rem] rounded-full opacity-30 blur-3xl"
-            style={{ background: "var(--gradient-accent)" }} />
-          <div aria-hidden className="absolute -bottom-32 -left-20 w-96 h-96 rounded-full opacity-20 blur-3xl"
-            style={{ background: "var(--gradient-accent)" }} />
+          style={{ backgroundColor: "#4FA8E0" }}>
           <div className="relative max-w-2xl">
-            <div className="text-xs uppercase tracking-[0.25em] text-white/70 font-semibold">Start your project</div>
+            <div className="text-xs uppercase tracking-[0.25em] text-white/85 font-semibold">Start your project</div>
             <h2 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.05]">Planning a build or refit?</h2>
-            <p className="mt-6 text-lg text-white/85 max-w-xl leading-relaxed">Get a site visit, detailed measurements and an engineered quote within 5 working days — no obligation.</p>
+            <p className="mt-6 text-lg text-white/90 max-w-xl leading-relaxed">Get a site visit, detailed measurements and an engineered quote within 5 working days — no obligation.</p>
           </div>
-          <Link to="/contact" className="relative inline-flex items-center gap-2 rounded-md bg-[var(--gradient-accent)] text-[oklch(0.15_0.02_240)] px-9 py-5 text-base font-semibold shadow-lg hover:scale-[1.02] transition shrink-0">
+          <Link to="/contact" className="relative inline-flex items-center gap-2 rounded-md bg-white text-[#1f6fa8] px-9 py-5 text-base font-semibold shadow-lg hover:scale-[1.02] transition shrink-0">
             Request a Quote <ArrowRight size={18} />
           </Link>
         </div>
