@@ -172,8 +172,10 @@ function Home_() {
       <section className="relative mt-32 py-24 lg:py-28 overflow-hidden">
         <div aria-hidden className="absolute inset-0 -z-10">
           <img src={processBg} alt="" loading="lazy" width={1920} height={1024}
-            className="w-full h-full object-cover opacity-[0.18]" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, var(--background) 0%, transparent 20%, transparent 80%, var(--background) 100%)" }} />
+            className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(100deg, oklch(0.22 0.07 258 / 0.88) 0%, oklch(0.22 0.07 258 / 0.55) 55%, oklch(0.22 0.07 258 / 0.25) 100%)" }} />
+          <div className="absolute inset-x-0 top-0 h-24" style={{ background: "linear-gradient(180deg, var(--background), transparent)" }} />
+          <div className="absolute inset-x-0 bottom-0 h-24" style={{ background: "linear-gradient(0deg, var(--background), transparent)" }} />
         </div>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
