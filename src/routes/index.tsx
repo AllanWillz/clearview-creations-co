@@ -169,15 +169,13 @@ function Home_() {
       </section>
 
       {/* Process strip */}
-      <section className="relative mt-32 py-24 lg:py-28 overflow-hidden">
-        <div aria-hidden className="absolute inset-0 -z-10">
-          <img src={processBg} alt="" loading="lazy" width={1920} height={1024}
-            className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(100deg, oklch(0.22 0.07 258 / 0.88) 0%, oklch(0.22 0.07 258 / 0.55) 55%, oklch(0.22 0.07 258 / 0.25) 100%)" }} />
-          <div className="absolute inset-x-0 top-0 h-24" style={{ background: "linear-gradient(180deg, var(--background), transparent)" }} />
-          <div className="absolute inset-x-0 bottom-0 h-24" style={{ background: "linear-gradient(0deg, var(--background), transparent)" }} />
-        </div>
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative isolate mt-32 py-24 lg:py-28 overflow-hidden">
+        <img src={processBg} alt="" loading="lazy" width={1920} height={1024}
+          className="absolute inset-0 w-full h-full object-cover z-0" />
+        <div aria-hidden className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(100deg, oklch(0.20 0.09 260 / 0.92) 0%, oklch(0.22 0.08 260 / 0.70) 55%, oklch(0.22 0.08 260 / 0.45) 100%)" }} />
+        <div aria-hidden className="absolute inset-x-0 top-0 h-24 z-[1]" style={{ background: "linear-gradient(180deg, var(--background), transparent)" }} />
+        <div aria-hidden className="absolute inset-x-0 bottom-0 h-24 z-[1]" style={{ background: "linear-gradient(0deg, var(--background), transparent)" }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.25em] text-[oklch(0.78_0.14_60)] font-semibold">How we work</div>
