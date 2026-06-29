@@ -180,9 +180,9 @@ function Home_() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4">
-              <div className="text-xs uppercase tracking-[0.25em] text-[oklch(0.55_0.15_55)] font-semibold">How we work</div>
-              <h2 className="mt-3 text-4xl lg:text-5xl font-semibold tracking-tight text-foreground">From site visit to handover.</h2>
-              <p className="mt-4 text-muted-foreground">A transparent four-step process with milestone reporting at every stage.</p>
+              <div className="text-xs uppercase tracking-[0.25em] text-[oklch(0.78_0.14_60)] font-semibold">How we work</div>
+              <h2 className="mt-3 text-4xl lg:text-5xl font-semibold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">From site visit to handover.</h2>
+              <p className="mt-4 text-white/85 text-lg">A transparent four-step process with milestone reporting at every stage.</p>
             </div>
             <ol className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
               {[
